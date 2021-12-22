@@ -10,7 +10,7 @@ function preload(){
    "Images/HotAirBallon-02.png","Images/HotAirBallon-03.png","Images/HotAirBallon-03.png","Images/HotAirBallon-03.png");
   }
 
-//Function to set initial environment
+// Función para configurar el ambiente inicial
 function setup() {
   database=firebase.database();
   createCanvas(1500,700);
@@ -24,26 +24,26 @@ function setup() {
   textSize(20); 
 }
 
-// function to display UI
+// Función para mostrar UI
 function draw() {
   background(bg);
 
   if(keyDown(LEFT_ARROW)){
     updateHeight(-10,0);
-    //add the animation of balloon [use balloonImage2]
+    // Agrega la animación del globo [usa balloonImage2]
   }
   else if(keyDown(RIGHT_ARROW)){
     updateHeight(10,0);
-    //add the animation of balloon [use balloonImage2]
+    // Agrega la animación del globo [usa balloonImage2]
   }
   else if(keyDown(UP_ARROW)){
     updateHeight(0,-10);
- //add the animation of balloon [use balloonImage2]
+    // Agrega la animación del globo [usa balloonImage2]
     balloon.scale=balloon.scale -0.005;
   }
   else if(keyDown(DOWN_ARROW)){
     updateHeight(0,+10);
-  //add the animation of balloon [use balloonImage2]
+    // Agrega la animación del globo [usa balloonImage2]
     balloon.scale=balloon.scale+0.005;
   }
 
@@ -51,7 +51,7 @@ function draw() {
   fill(0);
   stroke("white");
   textSize(25);
-  text("**Use arrow keys to move Hot Air Balloon!",40,40);
+  text("**¡Usa las flechas del teclado para mover el globo aerostático!",40,40);
 
 }
 
@@ -67,10 +67,10 @@ function updateHeight(x,y){
 
 
 function readHeight(data){
-  //assign the value of data to height
-  //assign the x and y value of height to the respective x and y position of balloon
+  // Asigna el valor de "data" como la altura 
+  // Asigna el valor de "X" e "y" de la altura a las posiciones "x" e "y" respectivas del globo
  }
 
 function showError(){
-  console.log("Error in writing to the database");
+  console.log("Error la escribir en la base de datos");
 }
